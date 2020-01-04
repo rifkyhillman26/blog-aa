@@ -7,7 +7,7 @@
 
 module.exports = {
   title: 'Asrul Dev',
-  tagline: 'The tagline of my site',
+  tagline: 'Belajar web dan mobile',
   url: 'http://asrul.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
@@ -114,7 +114,6 @@ module.exports = {
     },
   ],
   plugins: [
-    '@docusaurus/plugin-google-analytics',
     '@docusaurus/plugin-sitemap',
     {
       cacheTime: 600 * 1000, // 600 sec - cache purge period

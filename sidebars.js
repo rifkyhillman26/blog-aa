@@ -7,6 +7,6 @@
 
 module.exports = {
   someSidebar: {
-    Docusaurus: ['30daysweb'],
+    Series: ['30daysweb'],
   },
 };
