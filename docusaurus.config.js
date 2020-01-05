@@ -24,7 +24,8 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        {to: 'docs/30daysweb', label: '30d Js', position: 'left'},
+        {to: 'docs/30daysweb', label: '30d Js', position: 'right'},
+        {to: 'docs/android', label: 'Android', position: 'right'},
         {to: 'blog', label: 'Blog', position: 'left'},
         // Please keep GitHub link to the right for consistency.
         {
@@ -47,6 +48,10 @@ module.exports = {
             {
               label: '1 Minggu Mongo',
               to: 'docs/1wmongo',
+            },
+            {
+              label: 'Android',
+              to: 'docs/android',
             },
           ],
         },

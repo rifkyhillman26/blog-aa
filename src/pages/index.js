@@ -8,29 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Learn</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>Javascript</>,
+    imageUrl: 'https://skillvalue.com/jobs/wp-content/uploads/sites/7/2019/07/D%C3%A9veloppeur-Full-Stack-Poste-CDI-%E2%80%93-Paris.png',
     description: (
       <>
-        Belajar dengan cara yang sederhana
+        Javascript dengan materi dasar, express js, react, vue, angular, svelte, React Native dan Ionic
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Kotlin</>,
+    imageUrl: 'https://andrewshitov.com/wp-content/uploads/2019/11/Kotlin.png',
     description: (
       <>
-        Focus sesuai dengan topik
+        Mempelajari dasar-dasar kotlin hingga membangun sebuah aplikasi Android
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>PHP</>,
+    imageUrl: 'https://www.beliefmedia.com.au/wp-content/uploads/2017/09/php-wallpaper-1.jpg',
     description: (
       <>
-        Berdasar react kita bahas yang lain juga
+        Membahas php dari dasar, framework codeigniter, dan framework Laravel
       </>
     ),
   },
@@ -78,7 +78,7 @@ function Home() {
         {features && features.length && (
           <section className={styles.features}>
             <div className="container">
-              <div className="row">
+              <div className="row" style={{textAlign: 'center'}}>
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
                 ))}
