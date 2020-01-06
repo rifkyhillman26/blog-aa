@@ -11,8 +11,8 @@ module.exports = {
   url: 'http://asrul.dev',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'asruldev', // Usually your GitHub org/user name.
+  projectName: 'blog-aa', // Usually your repo name.
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-154182296-1',
@@ -34,6 +34,7 @@ module.exports = {
           position: 'right',
         },
       ],
+      hideOnScroll: true,
     },
     footer: {
       style: 'dark',
@@ -87,9 +88,9 @@ module.exports = {
         },
       ],
       logo: {
-        alt: 'Facebook Open Source Logo',
-        src: 'img/oss_logo.png',
-        href: 'https://opensource.facebook.com/',
+        alt: 'Follow Me',
+        src: 'https://sarasotasucculentsociety.org/images/social-media/instagram-name-graphic.svg',
+        href: 'https://instagram.com/talkasrul',
       },
       // Please do not remove the credits, help to publicize Docusaurus :)
       copyright: `Copyright © ${new Date().getFullYear()} Asrul Dev build with Love.`,
@@ -113,9 +114,9 @@ module.exports = {
   scripts: [
     {
       'data-ad-client': 'ca-pub-1448095049042566',
+      async: true,
       src:
         'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-      async: true,
     },
   ],
   plugins: [

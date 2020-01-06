@@ -393,7 +393,7 @@ Dari namanya sudah bisa kita tebak gunanya untuk apa, ya benar gunanya untuk men
 
 ```js
 let mood = 'bahagia'
-console.log(url.repeat(10)) 
+console.log(mood.repeat(10)) 
 // hasil: bahagiabahagiabahagiabahagiabahagiabahagiabahagiabahagiabahagiabahagia
 ```
 
@@ -401,4 +401,156 @@ Masih banyak lagi method pada string seperti indexOf, replace, dll. Anda bisa ba
 
 
 ## Hari 3
-Coming Soon Boolean, Operator ...
+
+Update: Selasa, 7 Januari 2020
+
+### Boolean
+Boolean hanya memiliki nilai benar atau salah (`true` / `false`). Biasanya boolean ini digunakan untuk membandingkan nilai menggunakan operator pembanding.
+
+```js
+let punyaCinta = false
+let udahNikah = true
+let lebihTua = 40 > 13
+```
+
+### Operator
+
+#### Assigment Operator
+Operator ini digunakan untuk mengisi nilai pada sebuah variable. Misal variable usia diisi dengan 25.
+
+```js
+let usia = 25
+```
+
+Perhatikan tabel berikut
+
+Operator | Contoh | Penjelasan
+:--------:|:-------:|------------
+= | x = 10 | x menyimpan nilai 10
++= | x += 1 | nilai awal x ditambahkan dengan 1 atau sama artinya dengan x = x + 1
+-= | x -= 1 | nilai awal x dikurangkan dengan 1 atau sama artinya dengan x = x - 1
+*= | x *= 1 | nilai awal x dikalikan dengan 1 atau sama artinya dengan x = x * 1
+/= | x /= 1 | nilai awal x dibagikan dengan 1 atau sama artinya dengan x = x / 1
+
+```js
+let nilai = 19
+nilai += 20
+
+console.log(nilai)
+// hasilnya: 39
+```
+
+#### Operator Aritmatika
+Operator ini digunakan untuk proses matematik seperti tambah, kurang, kali, bagi, dll.
+
+```js
+let bil1 = 10
+let bil2 = 5
+
+console.log(bil1 * bil2)
+// hasil: 50
+```
+
+#### Operator Pembanding
+Pada pemrograman kita dapat membandingkan dua nilai dengan operator pembanding. Dicek dengan hasil antara benar (true) atau salah (false).
+
+Operator | Nama | Contoh
+:----:|-----------|--------
+== | Sama dengan | x == y
+=== | Sangat Sama dengan | x === y
+!= | Tidak sama dengan | x != y
+!== | Sangat tidak sama dengan | x !== y
+> | Lebih dari | x > y
+< | Kurang dari | x < y
+>= | Lebih dari atau sama dengan | x >= y
+<= | Kurang dari atau sama dengan | x <= y
+
+```js
+console.log(5 > 1)              
+// hasilnya: true, karena 5 lebih besar dari 1
+console.log(2 <= 3)             
+// hasilnya: true, karena 2 lebih kecil dari 3
+console.log(3 == 2)             
+// hasilnya: false, karena 3 tidak sama dengan 2
+console.log(0 == false)         
+// hasilnya: true, karena 0 dianggap false dalam javascript
+console.log(1 === true)         
+// hasilnya: false, karena tipe data berbeda
+```
+
+Sering ulangi untuk lebih paham penggunaan operator perbandingan ini, karena dalam pemrograman bahasa apapun ini akan sangat sering ditemui. Bahkan saya bisa bilang bahwa yang belum dapat memahami operator ini tidak akan bisa menjadi seorang programmer
+
+#### Operator Logika
+Terdapat tiga operator yang termasuk operator logika, yaitu:
+
+**AND**, jika salah satu bernilai false maka hasilnya false.
+
+Kiri | Kanan | Nilai
+-----|-----|-------
+true | true | true
+true | false | false
+false | true | false
+false | false | false
+
+**OR**, jika salah satu bernilai tru maka hasilnya true.
+
+Kiri | Kanan | Nilai
+-----|-----|-------
+true | true | true
+true | false | true
+false | true | true
+false | false | false
+
+**NOT**, kebalikan dari nilai aslinya. Tidak true artinya false, dan sebaliknya.
+
+Operator logika akan mengevaluasi bagian kiri kemudian mengevaluasi bagian kanan, hasil yang di `return` tergantung operator yang digunakan.
+
+```js
+console.log(5 > 3 && 10 > 5)
+// hasil: true
+console.log(true || 1 > 5)
+// hasil: true
+console.log(!true)
+// hasil: false
+```
+
+#### Operator Kenaikan dan Penurunan
+
+Ada dua tipe oparator ini yaitu: **Pra naik/turun**, nilai akan bertambah/berkurang sebelum ditampilkan dan **Pasca naik/turun**, nilai akan bertambah/berkurang setelah ditampilkan.
+
+**Pra**
+
+```js
+let hitung = 0
+console.log(++hitung) 
+// hasil: 1
+console.log(hitung)   
+// hasil: 1
+```
+
+**Pasca**
+
+```js
+let hitung = 0
+console.log(hitung--) // 0
+console.log(hitung)   // -1
+```
+
+#### Operator Ternary
+Operator ini memungkinkan untuk menulis kondisi atau disebut operator percabangan.
+
+```js
+let sedangHujan = true
+sedangHujan
+  ? console.log('Kamu butuh payung')
+  : console.log('Slow aja hari cerah kok')
+
+// hasil: Kamu butuh payung
+```
+
+Referensi untuk operator baca di [sini](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+
+## Hari 4
+
+coming soon Percabangan
