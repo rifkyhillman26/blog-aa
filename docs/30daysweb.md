@@ -349,7 +349,7 @@ substr digunakan untuk mengiris atau memotong karakter, ini membutuhkan 2 argume
 
 ```js
 let nama = 'Anis Fikriyyah'
-console.log(string.substr(5,6))    
+console.log(nama.substr(5,6))    
 // hasil: Fikriy
 ```
 Perhatikan gambar berikut
@@ -362,7 +362,7 @@ split ini digunakan untuk menjadikan string menjadi potongan array.
 ```js
 let nama = 'Asrul Harahap'
 
-console.log(string.split(' '))  
+console.log(nama.split(' '))  
 // hasil: ["Asrul", "Harahap"]
 
 let firstName = 'Asrul'
@@ -384,7 +384,7 @@ let nama = "   Anies Baswedan                     "
 
 console.log(nama)
 // hasil:    Anies Baswedan                      
-console.log(string.trim())
+console.log(nama.trim())
 // hasil: Anies Baswedan
 ```
 
@@ -552,5 +552,867 @@ Referensi untuk operator baca di [sini](https://developer.mozilla.org/en-US/docs
 
 
 ## Hari 4
+Update: Rabu, 08 Januari 2020
 
-coming soon Percabangan
+### Percabangan
+Percabangan atau sering disebut juga dengan conditional digunakan untuk pengambilan keputusan berdasarkan kondisi-kondisi. Secara default, javascript menjalankan percabangan dari atas kebawah. Misal jika sudah ketemu nilai true maka selanjutnya kode akan diabaikan oleh program.
+
+### IF
+Gunakan if untuk menjalankan kode yang pada kondisi yang bernilai benar.
+
+```js
+if(syarat) {
+    // Jalankan kode jika syarat terpenuhi atau bernilai benar
+}
+```
+
+```js
+let usia = 19
+if(usia >= 18) {
+    console.log("Okay selamat, Anda boleh ikut")
+}
+// hasil: Okay selamat, Anda boleh ikut
+```
+
+Pada contoh jika usia dibawah 18 maka program tidak menjalankan apa-apa.
+
+### IF-ELSE
+IF-ELSE ini memungkinkan untuk menjalankan kode yang tidak sesuai dengan persyaratan.
+
+```js
+if(syarat) {
+    // Jalankan kode jika syarat terpenuhi atau bernilai benar
+} else {
+    // Jalankan kode jika syarat tidak terpenuhi atau bernilai salah
+}
+```
+
+```js
+let usia = 10
+if(usia >= 18) {
+    console.log("Okay selamat, Anda boleh ikut")
+} else {
+    console.log("Maaf nak, Anda harus menunggu beberapa tahun lagi")
+}
+
+// hasil: Maaf nak, Anda harus menunggu beberapa tahun lagi
+```
+
+### IF-ELSE IF-ELSE
+Mungkin anda butuh untuk mengambil keputusan dari beberapa syarat yang diajukan, seperti halnya kehidupan sehari-hari.
+
+```js
+if (syarat) {
+    // jalankan jika syarat terpenuhi 
+} else  if (kondisi) {
+    // jalankan jika syarat terpenuhi dan syarat sebelumnya tidak terpenuhi
+} else {
+    // jalankan jika semua syarat tidak terpenuhi
+}
+```
+
+```js
+let angka = 0
+if (angka > 0) {
+  console.log(`${angka} adalah bilangan positif`)
+} else if (angka < 0) {
+  console.log(`${angka} adalah bilangan negati`)
+} else if (angka == 0) {
+  console.log(`${angka} adalah Nol`)
+} else {
+  console.log(`${angka} bukanlah angka yang valid`)
+}
+// hasil: 0 adalah Nol
+```
+
+### Switch
+
+Switch adalah alternatif untuk `if else`. Blok case dijalankan jika nilai dalam tanda kurung pernyataan cocok dengan case. Berhenti jika case telah terpenuhi.
+
+```js
+switch (nilai) {
+    case  1 :
+       // jalankan jika nilai sama dengan case 1
+        break 
+    
+    case  2 :
+        // jalankan jika nilai sama dengan case 2
+        break 
+    default :
+        // jalankan jika semua case salah 
+}
+```
+
+```js
+let cuaca = 'berawan'
+switch (cuaca) {
+  case 'hujan':
+    console.log('Kamu butuh jas hujan')
+    break
+  case 'berawan':
+    console.log('Sedikit dingin, gunakan jaket kesayanganmu')
+    break
+  case 'cerah':
+    console.log('Senangnya bisa kemana saja')
+    break
+  default:
+    console.log('BMKG belum update cuaca nih :(')
+}
+
+// hasil: Sedikit dingin, gunakan jaket kesayanganmu
+```
+
+### Ternary
+
+Ini sudah dibahas pada hari sebelumnya, [baca](https://asrul.dev/docs/30daysweb#operator-ternary)
+
+
+## Hari 5
+Update: Kamis, 09 Januari 2020
+
+### Array
+
+Array dapat menyimpan banyak data dengan tipe data yang berbeda-beda. Setiap nilai dalam array memiliki indeks dan memiliki referensi di alamat memori. Nilai dapat diakses dengan indeks yang dimulai dari indeks ke NOL ( 0 ). Elemen terakhir adalah panjang indeks dikurang 1.
+
+Array ditandai dengan kurung siku `[]`
+
+```js
+let peliharaan = []
+let makanan = ["pisang", "susu", "indomie"]
+
+console.log(makanan[2])
+// hasil: indomie
+```
+
+![Indeks](https://raw.githubusercontent.com/AsrulLove/img-db/master/indeks.png)
+
+### Ubah nilai Array
+
+Untuk mengubah nilai array bisa menggunakan indeks kemudian beri nilai layaknya memberi nilai pada variable.
+
+```js
+let makanan = ["pisang", "susu", "indomie"]
+
+console.log(makanan[2])
+// hasil: indomie
+makanan[2] = "Nasi"
+console.log(makanan[2])
+// hasil: Nasi
+```
+
+### .concat()
+Untuk menggabung dua array atau lebih bisa menggunakan concat.
+
+```js
+let buah = ['pisang', 'jeruk', 'mangga', 'lemon']
+let sayuran = ['Tomat', 'Kentang', 'Kubis', 'Bawang', 'Wortel']
+let isiKulkas =  buah.concat(sayuran)
+
+console.log(isiKulkas)
+// hasil: ['pisang', 'jeruk', 'mangga', 'lemon', 'Tomat', 'Kentang', 'Kubis', 'Bawang', 'Wortel']
+```
+
+selain pakai `.concat()` bisa juga menggunakan array spread (ES6).
+
+```js
+const arr1 = [1,2,3]
+const arr2 = [4,5,6]
+const arr3 = [...arr1, ...arr2]
+console.log(arr3)
+// hasil: [1,2,3,4,5,6]
+```
+
+### .length
+Untuk mendapatkan panjang array bisa menggunakan array.length.
+
+```js
+let siswa = ["Anis", "Asrul", "Tisha"]
+console.log(siswa.length)
+// hasil: 3
+``` 
+
+### .indexOf()
+.indexOf, digunakan untuk memeriksa apakah ada item dalam array. Jika ada, ia mengembalikan indeks item tersebut, jika tidak ada maka mengembalikan `-1`.
+
+```js
+let isiKulkas = ['semangka', 'pisang', 'mangga', 'apel']
+let index = isiKulkas.indexOf('semangka')
+console.log(index)
+// hasil: 0
+
+if(index != -1){
+   console.log('Buah tersebut ada dalam kulkas, silahkan ambil') 
+} else {
+    console.log('Buah itu belum tersedia dalam kulkas')
+}
+
+// hasil: Buah tersebut ada dalam kulkas, silahkan ambil
+```
+
+### .join()
+join() digunakan pada array untuk menggabungkan item-item dan menjadikannya sebagai sting. Untuk jelasnya perhatikan contoh berikut.
+
+```js
+let mugiwara = ['Luffy', 'Zorro', 'Sanji', 'Nami']
+
+console.log(mugiwara.join())
+// hasil: Luffy,Zorro,Sanji,Nami
+
+console.log(mugiwara.join(' atau '))
+// hasil: Luffy atau Zorro atau Sanji atau Nami
+
+console.log(mugiwara.join('**'))
+// hasil: Luffy**Zorro**Sanji**Nami
+
+console.log(mugiwara.join(', '))
+// hasil: Luffy, Zorro, Sanji, Nami
+
+console.log(mugiwara.join('-'))
+// hasil: Luffy-Zorro-Sanji-Nami
+```
+
+Kalau dilihat lebih teliti lagi, parameter `.join()` adalah penghubung yang digunakan setelah array itu digabung.
+
+### .push()
+
+Push adalah fungsi array yang akan menambahkan nilai di belakang nilai terakhir pada array. Layaknya sebuah antrian, push adalah orang yang mengantri selanjutnya, akan berada di posisi paling belakang. Fungsi push akan menerima satu parameter, berupa nilai yang akan ditambahkan.
+
+```javascript
+let bialngan = [0, 1, 2, 3]
+bialngan.push(4)
+console.log(bialngan)
+// hasil: [0, 1, 2, 3, 4]
+```
+
+### .pop()
+
+Fungsi array yang akan menghapus nilai paling belakang dari array. 
+
+```javascript
+let bilangan = [0, 1, 2, 3]
+bilangan.pop()
+console.log(bilangan)
+// hasil: [0, 1, 2]
+```
+
+### .unshift()
+
+Unshift adalah fungsi array yang akan menambah nilai ke depan array (ke index 0), dan menggeser seluruh isi array kebelakang. 
+
+```javascript
+let bilangan = [0, 1, 2]
+bilangan.unshift(3)
+console.log(bilangan)
+// hasil: [3, 0, 1, 2]
+```
+
+### .shift()
+
+Shift adalah fungsi array yang akan menghapus nilai paling depan dari array. Fungsi shift tidak menerima parameter apapun.
+
+```javascript
+let bilangan = [3, 0, 1, 2]
+bilangan.shift()
+console.log(bilangan) 
+// hasil: [0, 1, 2]
+```
+
+### .sort()
+
+sesuai nama sort adalah untuk mengurutkan. Sort mengurutkan otomatis secara ascending dan diurutkan berdasarkan **unicode** dari karakter. Kamu akan menemukan masalah ini saat mengurutkan angka.
+
+```javascript
+let bilangan = [3, 5, 7, 1, 2]
+bilangan.sort()
+console.log(bilangan)
+// hasil: [1, 2, 3, 5, 7]
+```
+
+```js
+let siswa = ['Sani', 'Anis', 'Kiki', 'Fahri']
+siswa.sort()
+console.log(siswa)
+// hasil: ['Anis', 'Fahri', 'Kiki', 'Sani']
+```
+
+Contoh kasus `.sort()` pada angka:
+
+```javascript
+let bilangan = [1, 2, 15]
+bilangan.sort();
+console.log(bilangan) 
+// hasil: [1, 15, 2]
+```
+
+Hasil dari sort di atas tidak sesuai dengan `ekspektasi` kita! Seharusnya [1, 2, 15] namun yang terjadi adalah [1, 15, 2]. Hal ini karena JavaScript melakukan sort secara **unicode** atau sebagai karakter, dan karena 15 diawali dengan karakter '1', maka akan dianggap lebih awal daripada karakter '2'. Untuk menyelesaikan masalah ini, kamu perlu menambahkan satu parameter berupa fungsi pembanding. Mungkin kamu akan sedikit bingung dengan code dibawah ini, namun intinya adalah kita membuat satu fungsi yang menilai apakah nilai pertama lebih kecil dari nilai kedua.
+
+```javascript
+let bilangan = [1, 2, 15]
+bilangan.sort(function(value1, value2) { 
+    return value1 > value2 
+})
+console.log(bilangan)
+// hasil: [1, 2, 15]
+```
+
+dengan fungsi di dalam ini, kita juga bisa membuat fungsi sort yang descending:
+
+```javascript
+let bilangan = [1, 2, 15]
+bilangan.sort(function(value1, value2) { 
+    return value1 < value2 
+})
+console.log(bilangan) 
+// hasil: [15, 2, 1]
+```
+
+### .slice()
+
+Slice adalah fungsi array yang akan mengambil irisan atau potongan dari sebuah array. `.slice()` menerima satu atau dua parameter. Parameter pertama adalah index irisan diambil, dan parameter kedua adalah index irisan terakhir diambil. Jika parameter kedua tidak didefinisikan, irisan akan diambil hingga akhir dari array.
+
+```javascript
+let bilangan = [0, 1, 2, 3, 4]
+let porongan = bilangan.slice(1, 3)
+console.log(porongan) 
+// hasil: [1, 2]
+
+let potonganLain = arr.slice(1);
+console.log(potonganLain)
+// hasil: [1, 2, 3, 4]
+```
+
+Ada banyak lagi method yang disediakan javascript untuk array seperti .map(), .reduce(), .filter(), dan lainnya.
+
+Kamu bisa baca tulisan saya ini https://asrul.dev/blog/memahami-map-filter-dan-reduce
+
+
+### Array Multidimensi
+Array multidimensi adalah sebuah array yang berisikan array lagi didalamnya. Konsepnya penggunaannya sama dengan array biasa (satu dimensi), hanya saja jumlah indeks yang digunakan saat mengakses nilai didalam array adalah sebanyak dimensi dari array tersebut.
+
+Contoh array multidimensi antara lain diagram kartesius dan matriks. Diagram kartesius dan matriks adalah array multidimensi yang sama-sama membutuhkan koordinat untuk mengakses nilai didalamnya.
+
+```javascript
+let matriks = [ [1, 2], [3, 4], [5, 6] ]
+console.log(matriks[0])
+// hasil: [1, 2]
+
+console.log(matriks[0][1])
+// hasil: 2
+
+
+let siswa = [ ['Asrul Harahap', 'Universitas Negeri Padang'], ['Anis Fikriyyah', 'Universitas Bale Bandung'] ]
+
+console.log(siswa[1])
+// hasil: ['Anis Fikriyyah', 'Universitas Bale Bandung']
+
+console.log(siswa[0][1])
+// hasil: 'Universitas Negeri Padang'
+```
+
+
+## Hari 6
+Update: Jumat, 10 Januari 2020
+
+### Perulangan
+Perulangan sangat sering dilakukan dalam keehidupan sehari-hari, misalkan ibu Anis akan mengupas kentang dalam kantong plastik sebanyak 100 buah kentang. Maka ibu Anis akan kupas kentang pertama, selsai kupas kentang kedua, dan seterusnya hingga ketang terakhir adalah 100.
+
+Dalam bahasa pemograman, perulangan ini disebut dengan looping.
+
+### For Loop
+
+```js
+for(inisial, kondisi, increment/decrement){
+  // eksekusi kode
+}
+```
+
+![loop](https://raw.githubusercontent.com/AsrulLove/img-db/master/loopingfor.png)
+
+```js
+for(let i = 5; i >= 0; i--){
+  console.log(i)
+}
+// hasil:
+// 5
+// 4
+// 3
+// 2
+// 1
+```
+
+### While loop
+Looping yang tidak tentu, maksudnya selalu melakukan looping hingga syarat terpenuhi.
+
+```js
+let i = 0
+while (i <= 5) {
+  console.log(i)
+  i++
+}
+// hasil:
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+### For Of
+
+```js
+let pelajaran = [ 'HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB' ]
+
+for (let belajar of pelajaran) {
+  console.log(belajar.toUpperCase()) 
+}
+
+// hasil:
+// HTML 
+// CSS 
+// JAVASCRIPT 
+// REACT 
+// NODE 
+// MONGODB
+```
+
+Sebenarnya ada beberapa cara looping dalam javascript lainnya, anda bisa baca di [sini](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+
+### Object Literal
+
+JavaScript merupakan bahasa pemrograman yang berbasis simple-object (Objek sederhana). Objek adalah kumpulan tidak berurut yang merangkai beberapa property dan property memiliki nama/key dan value (key-value pairs).
+
+Objek dalam JavaScript, sama seperti banyak bahasa pemrograman lainnya, bisa dibandingkan dengan objek dalam kehidupan nyata.
+
+Untuk membuat sebuah object literal bisa dengan cara menuliskan kurung kurawal (curly bracets) kemudian menuliskan nama property yang harus memiliki key dan value.
+
+```javascript
+let obj = {
+  key: 'value'
+};
+```
+
+Value dalam object literal selain string bisa juga dengan memasukkan value array bahkan value object literal lainnya.
+
+Kita bisa coba dengan kode berikut:
+
+```javascript
+let asrulObj = {
+    id: "1221092408940001",
+    nama: "Asrul Harahap",
+    lahir: {
+        tempat: "Medan",
+        tgl: "1994-08-24",
+    },
+    favorit: [
+        "coding",
+        "membaca",
+        {
+            olahraga: ["renang", "mendaki"],
+            makanan: ["bakmi gm", "yosinoya"],
+        }
+    ],
+    alamat: {
+        jalan: "Jl. Tanah Kusir II",
+        kelurahan: "Kebayoran Lama Selatan",
+        kecamatan: "Kebayoran Lama",
+        kota: "Jakarta Selatan",
+        provinsi: "Sumatera Utara",
+        kodePos: 12240
+    }
+}
+```
+
+### Cara akses objek literal
+Gunakan titik sesuai node data berada, perhatikan contoh sesuai objek diatas.
+
+```js
+console.log(asrulObj.alamat.kota)
+// hasil: Jakarta Selatan
+
+console.log(asrulObj.favorit[2].makanan[1])
+// hasil: yosinoya
+```
+
+### Mengubah nilai
+Hampir sama dengan cara akses, tapi gunakan tanda sama dengan untuk memberi nilai baru, perhatikan contoh sesuai objek diatas.
+
+```js
+console.log(asrulObj.alamat.provinsi)
+// hasil: Sumatera Utara
+
+asrulObj.alamat.provinsi = "DKI Jakarta"
+console.log(asrulObj.alamat.provinsi)
+// hasil: DKI Jakarta
+```
+
+Untuk lebih dalam tentang objek literal baca referensi di [sini](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics)
+
+
+## Hari 7
+Update: Sabtu, 11 Januari 2020
+
+### Latihan
+
+1. Silahkan deklarasikan perang!
+
+2. Cek tipe data dari `"2020-01-01"`, `1994`, dan `Asrul Dev`!
+
+3. Buatlah variable nama dan nilainya nama anda!
+
+4. Buatlah variable usia dan nilainya usia anda!
+
+5. Buatlah kalimat yang menggabungkan soal 3 dan soal 4!
+
+6. Buatlah kode untuk kocok dadu ludo yang nilainya random  1 hingga 6!
+
+7. Hitunglah jumlah karakter `Aku mencintai Javascript` menggunakan koding!
+
+8. Buatlah program untuk mengkonversi bulan angka menjadi kata, misal 1 menjadi Januari, 2 menjadi Februari, dst!
+
+9. Gabunglah array berikut menjadi kalimat yang bisa dibaca dengan baik, `["Aku", "bersyukur", "atas", "semua", "rezki", "ini", "termasuk", "kamu"]`
+
+10. Ubahlah nilai dari variable a menjadi variable b, dan variable b menjadi variable a
+
+> Dilarang menambahkan variable lain
+
+```js
+let a = 10
+let b = 8
+// hasil yang diharapkan
+// a = 8
+// b = 10
+```
+
+11. Buatlah gambar berikut menggunakan looping.
+```bash
+#
+##
+###
+####
+#####
+######
+#######
+```
+
+12. Buatlah perkalian berikut dengan looping!
+```bash
+0 x 0 = 0
+1 x 1 = 1
+2 x 2 = 4
+3 x 3 = 9
+4 x 4 = 16
+5 x 5 = 25
+6 x 6 = 36
+7 x 7 = 49
+8 x 8 = 64
+9 x 9 = 81
+10 x 10 = 100
+```
+
+13. Soal Cerita
+
+Toko Jaya Baru yang sedang melakukan SALE ingin menghitung jumlah profit untuk setiap jenis barang yang terjual pada hari itu.
+
+Barang-barang SALE yang akan dihitung penjualannya:
+ - Sepatu brand Stacattu seharga 1500000 dan stock barang yang tesedia 10
+ - Baju brand Zoro seharga 500000 dan stock barang yang tesedia 2
+ - Sweater brand Uniklooh seharga 175000 dan stock barang yang tersedia 1
+
+Function akan menerima array yang berisikan object pembeli (nama pembeli, barang yang ingin dibeli dan jumlah barang yang dibelinya). Jika stock barang kurang dari jumlah yang ingin dibeli oleh pembeli maka pembeli batal untuk membeli barang tersebut.
+
+Function hitungProfit akan mengembalikan/me-return sebuah array of object dimana array tersebut berisi objek-objek barang dari toko Jaya Baru tersebut yang berisikan info nama barang, siapa saja yang membeli, sisa stock barang dan total pemasukan untuk barang tersebut
+
+
+**Penampakan Kode**
+
+```JavaScript
+function hitungProfit(shoppers) {
+  let listBarang = [ ['Sepatu Sanji', 1500000, 10],
+                     ['Baju Zoro', 500000, 2],
+                     ['Sweeter Hinata', 175000, 1]
+                   ];
+
+  // Tulis kode jawabanmu disini
+}
+
+// TEST CASES
+console.log(hitungProfit([{name: 'Anis Fikriyyah', product: 'Sepatu Sanji', amount: 2}, {name: 'Asrul Harahap', product: 'Sepatu Sanji', amount: 3}, {name: 'Ghazala Tisha', product: 'Sweeter Hinata', amount: 2}]));
+//[ { product: 'Sepatu Sanji',
+//   shoppers: [ 'Anis Fikriyyah', 'Asrul Harahap' ],
+//   leftOver: 5,
+//   totalProfit: 7500000 },
+// { product: 'Baju Zoro',
+//   shoppers: [],
+//   leftOver: 2,
+//   totalProfit: 0 },
+// { product: 'Sweeter Hinata',
+//   shoppers: [],
+//   leftOver: 1,
+//   totalProfit: 0 } ]
+
+console.log(hitungProfit([{name: 'Anis Fikriyyah', product: 'Sepatu Sanji', amount: 8}, {name: 'Asrul Harahap', product: 'Sepatu Sanji', amount: 10}, {name: 'Ghazala Tisha', product: 'Sweeter Hinata', amount: 1}, {name: 'Rifki Hilman', product: 'Baju Zoro', amount: 1}, {name: 'M. Lan', product: 'Baju Zoro', amount: 1}]));
+// [ { product: 'Sepatu Sanji',
+//     shoppers: [ 'Anis Fikriyyah' ],
+//     leftOver: 2,
+//     totalProfit: 12000000 },
+//   { product: 'Baju Zoro',
+//     shoppers: [ 'Rifki Hilman', 'M. Lan' ],
+//     leftOver: 0,
+//     totalProfit: 1000000 },
+//   { product: 'Sweeter Hinata',
+//     shoppers: [ 'Ghazala Tisha' ],
+//     leftOver: 0,
+//     totalProfit: 175000 } ]
+
+console.log(hitungProfit([{name: 'Anis Fikriyyah', product: 'Sepatu Naiki', amount: 5}]));
+// [ { product: 'Sepatu Sanji',
+//     shoppers: [],
+//     leftOver: 10,
+//     totalProfit: 0 },
+//   { product: 'Baju Zoro',
+//     shoppers: [],
+//     leftOver: 2,
+//     totalProfit: 0 },
+//   { product: 'Sweeter Hinata',
+//     shoppers: [],
+//     leftOver: 1,
+//     totalProfit: 0 } ]
+
+console.log(hitungProfit([])); 
+//[]
+```
+
+Kamu bisa kirim jawabannya dalam bentuk `.zip` pada link berikut.
+
+https://fs23.formsite.com/TezH4N/30jsminggu1/index.html
+
+![3 hours later](https://images2.memedroid.com/images/UPLOADED39/51fa964345f3e.jpeg)
+
+### Function
+Function adalah sebuah blok kode yang disusun sedemikian rupa untuk menjalankan sebuah tindakan.
+Blok kode ini dibuat untuk dapat bisa digunakan kembali. Cara atau bentuk penulisan function adalah
+sebagai berikut:
+
+```javascript
+function nama_function(parameter1, parameter2, ...) {
+  [Isi dari function berupa tindakan]
+  return [kembalian];
+}
+```
+
+### Cara Memanggil function
+Untuk menjalankan function butuh dipanggil, caranya yaitu dengan menuliskan nama function dan diikuti tanda buka tutup kurung atau disebut invoke `()`.
+
+```js
+function hi() {
+    console.log("Hai, asrul dev!")
+}
+
+hi() // panggil fuction hi
+// hasil: Hai, asrul dev!
+```
+
+### Void Function
+Void function adah function yang tidak melakukan return atau tidak memberikan kembalian terhadap yang memanggilnya.
+
+```javascript
+function hai() {
+  console.log("halo!");
+}
+
+tampilkan();
+```
+
+### Return Function
+
+```javascript
+function munculkanAngkaDua() {
+  return 2
+}
+
+let tampung = munculkanAngkaDua();
+console.log(tampung)
+// hasil: 2
+```
+
+### Function dengan parameter
+
+```javascript
+function kalikanDua(angka) {
+  return angka * 2
+}
+
+let tampung = kalikanDua(5);
+console.log(tampung)
+// hasil: 10
+```
+
+### Parameter dengan nilai default
+
+```javascript
+function tampilkanAngka(angka = 1) {
+  return angka
+}
+
+console.log(tampilkanAngka(5))
+// hasil: 5
+
+console.log(tampilkanAngka())
+// hasil: 1
+```
+
+Anda juga dapat menampung function sebagai variable dengan sebuah bentuk function yang dinamakan Anonymous Function.
+
+```javascript
+let fungsiPerkalian = function(angkaPertama, angkaKedua) {
+  return angkaPertama * angkaKedua
+}
+
+console.log(fungsiPerkalian(2, 4))
+// hasil: 8
+```
+
+### CallBack
+Function yang dilewatkan sebagai parameter disebut **callback**.
+Perhatikan kode berikut.
+
+```js
+function sapa(nama) {
+  alert('Hello ' + nama)
+}
+
+function prosesMenyapa(callback) {
+  let nama = prompt('Namamu siapa?')
+  callback(nama)
+}
+
+prosesMenyapa(sapa)
+
+// hasil: Namamu siapa? ...
+// Hello ...
+```
+
+Jelas terlihat bahwa pada function prosesMenyapa() mengirimkan function callback() sebagai parameter, dan inilah yang disebut dengan callback. Callback sering digunakan untuk data asyncronous sehingga data dapat ditunggu selesai baru lanjutkan program.
+
+## Hari 8
+coming soon, Persiapan masuk backend (Express Js)
+
+<!-- ## Hari 8
+Update: Minggu, 12 Januari 2020
+
+Kita telah belajar dasar-dasar javascript, sekarang saatnya kita menggunakan pelajaran dasar tersebut untuk membangun sebuah aplikasi. Saat ini kita akan belajar backend yaitu menggunakan `express js`
+
+### Menyiapkan Proyek
+Proyek yang akan kita buat harus diletakkan terpisah dengan file lain, sehingga dalam 1 folder tersebuh hanya ada proyek kita saja.
+
+Pada pembelajaran series ini saya akan membuat folder proyek dengan nama **express-30-js**. Setelah folder dibuat arahkan terminal ke folder tersebut dengan cara:
+
+```bash
+cd ~/Desktop/express-30-js
+```
+
+Folder proyek saya berada di Desktop, jika berbeda dengan saya silahkan disesuaikan. Sehingga penampakannya seperti berikut.
+
+![folder proyek](https://raw.githubusercontent.com/AsrulLove/img-db/master/folderproyek.png)
+
+Jika sudah diarahkan pada terminal, selanjutnya lakukan inisial proyek node js dengan perintah berikut.
+
+```bash
+npm init
+```
+![npm init](https://raw.githubusercontent.com/AsrulLove/img-db/master/initproyek.png)
+
+Proses ini dilakukan untuk membuat sebuah file `package.json` yang berguna untuk mengontrol proyek node js. Berikut isi file `package.json` yang dihasilkan.
+
+```json
+{
+  "name": "express-30",
+  "version": "1.0.0",
+  "description": "belajar expres bersama asrul.dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Asrul harahap",
+  "license": "ISC"
+}
+```
+
+### Install Express Js
+Express js adalah framework javascript tepatnya pada NodeJs yang berfungsi untuk membantu pengembangan web dan mobile.
+
+![expressjs](https://raw.githubusercontent.com/AsrulLove/img-db/master/expressjs.png)
+
+Install express js dengan perintah berikut:
+
+```bash
+npm install express --save
+```
+
+Setelah diinstall kita dapat melihat perubahan pada file `package.json` menjadi seperti berikut.
+
+```json
+{
+  "name": "express-30",
+  "version": "1.0.0",
+  "description": "belajar expres bersama asrul.dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Asrul harahap",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
+```
+
+### Membuat Web Server
+Web server adalah perangkat lunak yang berfungsi sebagai penerima permintaan yang dikirimkan melalui browser kemudian memberikan tanggapan permintaan dalam bentuk halaman situs web atau lebih umumnya dalam dokumen HTML, tapi bisa juga berupa suara, gambar, json, xml atau lainnya.
+
+Pada proyek buatlah file baru dengan nama `index.js` yang isinya seperti berikut ini.
+
+```js
+const express = require('express')
+const app = express()
+
+app.get('/', function(request, response) {
+    response.send('Webserver asrul.dev')
+})
+
+app.listen(5000, function() {
+    console.log(`Server running on http://localhost:5000`)
+})
+
+module.exports = app
+```
+
+### Menjalankan Web Server
+
+Jalankan webserver pada terminal dengan perintah:
+
+```bash
+node index.js
+```
+
+Jelasnya perhatikan gambar berikut.
+
+![Run server](https://raw.githubusercontent.com/AsrulLove/img-db/master/jalankanserver.png)
+
+Sampai sejauh ini kita sudah belajar dan berhasil membuat webserver. -->
+
+<!-- ## Hari 9
+Update: Senin, 13 Januari 2020
+
+### Install Insomnia REST
+Insomnia rest berguna untuk membantu kita melihat hasil atau response dari web server yang akan dibuat.
+
+![insomnia rest]()
+
+### Mengenal HTTP Method
+
+### Request
+
+### Response -->
